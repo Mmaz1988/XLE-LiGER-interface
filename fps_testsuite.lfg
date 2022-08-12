@@ -1,0 +1,77 @@
+# 1
+
+the girl baked a potato (2 0.003 14)
+
+# 2
+
+a girl baked a cake (2 0.002 14)
+
+# 3
+
+the ball rolled (1 0.001 9)
+
+# 4
+
+the ball rolled off (2 0.002 14)
+
+# 5
+
+the ball rolled of the table (0 0.004 17)
+
+# 6
+
+the ball rolled off of the table (2 0.003 23)
+
+# 7
+
+a girl rolled the ball off the table (1 0.002 26)
+
+# 8
+
+a girl rolled a ball off (1 0.002 17)
+
+# 9
+
+Alex kicked the ball to Ariel (1 0.003 18)
+
+# 10
+
+Alex kicked Ariel the ball (1 0.002 15)
+
+# 11
+
+the ball was kicked to Ariel by Alex (0 0.002 0)
+
+# 12
+
+Ariel was kicked the ball by Alex (0 0.001 0)
+
+# 13 -- Section 3.1.3 Stative predications 
+
+Katherine fears nightmares (0 0.001 0)
+
+# 14
+
+John pushed the cart (1 0.002 12)
+
+# 15
+
+Mary drove the car (0 0.001 0)
+
+# 16 -- Michael dried the cocoa beans
+
+Michael dried the beans (0 0.001 0)
+
+#17
+
+The sun melted the ice (0 0.001 0)
+
+#18
+
+The clown reddened his cheeks (0 0.001 0)
+
+# 18 sentences, 0.030 CPU secs total, 0.010 CPU secs max (06/03/22)
+
+# 5 mismatches, 18 sentences, 0.030 CPU secs total, 0.010 CPU secs max (06/03/22)
+
+# 6 mismatches, 18 sentences, 0.034 CPU secs total, 0.004 CPU secs max (06/30/22)

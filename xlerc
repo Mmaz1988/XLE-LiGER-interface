@@ -1,0 +1,30 @@
+#set encoding to utf-8
+set-character-encoding stdio utf-8
+
+# set timeout lower; amounts are in seconds
+set timeout 15
+
+# relpath turns a relative path name into an absolute one
+proc relpath {path} {
+     set home [string trimright [file dirname [info script]] ./]
+     set home [file join [pwd] $home]
+     return [file normalize [file join $home $path]]
+}
+
+#specify grammar
+set defaultParser [relpath fps_complex.lfg]
+
+#load parser
+create-parser $defaultParser
+
+#More output settings
+
+set showNumbers 0 ;# turns off node numbers in c-structure window
+set showFSNumbers 0 ;# turns off node numbers in f-structure window
+set xletreefont {Courier 20}
+set xletextfont {Courier 20}
+set xleuifont {Courier 20}
+set xlefsfont {Courier 20}
+#set showPredsOnlyFStruct 1
+#set showPredsOnlyFSChart 1
+#set backgroundColor white
