@@ -600,6 +600,11 @@ MORPH   ENGLISH   LEXICON (1.0)
 
 +PastBoth TNS XLE "past tense or past particle"
 		  { @VPAST
+		  | @PASTP }. 
+
+
+"+PastBoth TNS XLE past tense or past particle
+		  { @VPAST
 		    { ~s::(COMP ^) 
 		    (s::^ TEMP-REF REF) = before
 		      (s::^ TEMP-REF EVAL) = now |		     
@@ -607,19 +612,7 @@ MORPH   ENGLISH   LEXICON (1.0)
 		      (s::^ TEMP-REF EVAL) = (s::(COMP ^) TEMP-REF)
 		      (s::^ TEMP-REF REF) = before
 		      }}
-		  | @PASTP }. 
-
-"+PastBoth TNS XLE 
-		  { @VPAST
-		    { ~s::(COMP ^) 
-		    (s::^ TEMP-REF REF) = before
-		      (s::^ TEMP-REF EVAL) = now |		     
-		      (s::^ TEMP-REF EVAL) = (s::(COMP ^) TEMP-REF)
-		      { (s::^ TEMP-REF REF) = before |
-			(s::^ TEMP-REF REF) = overlap 
-		      }}
-		  | @PASTP }." 
-
+		  | @PASTP }."
 
 +123SP	PERS XLE .
 
