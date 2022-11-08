@@ -70,6 +70,25 @@ The sun melted the ice (0 0.001 0)
 
 The clown reddened his cheeks (0 0.001 0)
 
+
+#19
+
+Jordan eats
+
+#20
+
+Jordan eats an apple
+
+#21
+
+The apple was eaten
+
+#22
+
+The apple was eaten by Jordan
+
+
+
 # 18 sentences, 0.030 CPU secs total, 0.010 CPU secs max (06/03/22)
 
 # 5 mismatches, 18 sentences, 0.030 CPU secs total, 0.010 CPU secs max (06/03/22)

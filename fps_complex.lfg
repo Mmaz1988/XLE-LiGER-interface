@@ -5,8 +5,8 @@ DEMO   ENGLISH   CONFIG (1.0)
   TEMPLATES (DEMO ENGLISH) (STANDARD COMMON).  "added common ParGram templates"
   RULES   (DEMO ENGLISH) (MORPH ENGLISH).
   MORPHOLOGY (DEMO ENGLISH).
-  GOVERNABLERELATIONS    SUBJ OBJ OBJ2 COMP XCOMP OBL OBL-?+.
-  SEMANTICFUNCTIONS    ADJUNCT  TOPIC FOCUS POSS STANDARD.
+  GOVERNABLERELATIONS    SUBJ OBJ OBJ2 COMP XCOMP OBL.
+  SEMANTICFUNCTIONS    ADJUNCT  TOPIC FOCUS POSS STANDARD OBL-?+.
   NONDISTRIBUTIVES    NUM PERS COORD-FORM.
   EPSILON   e.
   OPTIMALITYORDER FPSnogood NOGOOD  PPadj +OBL +PPattach +sg-imp Nofps.
@@ -37,12 +37,33 @@ DEMO   ENGLISH   RULES (1.0)
  	  EXCL.  "obligatory exclamation mark"
 
    S --> NP: (^ SUBJ)=!
-	     (! CASE)=nom;
+	     (! CASE)=nom
+	     { (^PASSIVE) =c +
+	       {  (s::^ FPS RHEME) = !
+		  (s::^ FPS INITIATION INITIATOR) = (s::^ FPS PROCESS UNDERGOER)
+	       	  | 
+		  (s::^ FPS PROCESS UNDERGOER) = !
+		  (s::^ FPS INITIATION INITIATOR) ~= (s::^ FPS PROCESS UNDERGOER)
+	       }
+	     |
+	     [~ (^PASSIVE) = +]
+	     {
+	     (s::^ FPS INITIATION CHECK LEX) =c +
+	     (s::^ FPS INITIATION INITIATOR) = !
+	     (s::^ FPS INITIATION INIT-EV) = ^
+	     |
+	     [~ (s::^ FPS INITIATION CHECK LEX)]
+	     (s::^ FPS  PROCESS UNDERGOER) = !
+	     (s::^ FPS PROCESS PROC-EV) = ^
+             }
+	     };
  	 VP: (^ TNS-ASP TENSE). "require that sentences have tense"
 
 
 
- VP --> (AUX: (^ PARTICIPLE)) "auxiliary introduced for passive" 
+   VP --> (AUX: { (^ PARTICIPLE) =c past
+		  (^ PASSIVE) = + 
+		| (^ PARTICIPLE) =c pres }) "auxiliary introduced for passive" 
  	  V: ^=!;
  	  (ParticleP: (^ PART) = +_) "double AP with alternation?" 
  	  (NP: (^ OBJ)=! "direct object"
@@ -51,12 +72,7 @@ DEMO   ENGLISH   RULES (1.0)
  	  (NP: (^ OBJ2) = !) "secondary object"
  	  PP*: { ! $ (^ ADJUNCT) "PPs can be all types of adjuncts"
 		 (! PTYPE) =c sem "only semantic PPs here"
-		 {(^ PART) =c +_
-		 @(RHEME (^FPS) !)
-		 |
-		 @(OT-MARK FPSnogood)
-		 (^ NOGOOD) = +
-		 }
+		   @(RHEME ^ !)
 	       | (^ OBL) = ! "or a a general oblique"
 	       };
  	  (PP: (^ OBL-TO) = ! "special obl for ditransitives"
@@ -66,6 +82,8 @@ DEMO   ENGLISH   RULES (1.0)
  	  (PP: (^ OBL-AG) = ! "oblique agent of passive" 
 	       "example of a constraining equation: require a value with =c"
 	       (! PFORM) =c by
+	       (s::^ FPS INITIATION INIT-EV) = ^
+	       (s::^ FPS INITIATION INITIATOR) = ! 
 	       @(OT-MARK OBL)) 
  	  ({ CP: (^ COMP) = !;
  	   | VPinf: (^XCOMP) = !
@@ -83,7 +101,7 @@ DEMO   ENGLISH   RULES (1.0)
  	    N "head of NP"
  	    PP*: ! $ (^ ADJUNCT) "PPs modifying NPs" 
 		 (! PTYPE) =c sem "have to be semantic" 
-		 @(OT-MARK PPattach) "prefer PPs attached to NPs"
+		 "@(OT-MARK PPattach)" "prefer PPs attached to NPs"
  	  | PRON}. 
  
 
@@ -233,48 +251,124 @@ DITRANS(P) = @(PASS @(DAT-SHIFT (^ PRED)='P<(^ SUBJ) (^ OBJ) (^ OBL-TO)>')).
 
 "First phase syntax templates"
 
+"Experiments"
+
+   PROC(F) = (s::F FPS PROCESS PROC-EV) = ^
+	  (s::F FPS PROCESS UNDERGOER) ~=
+	  (s::F FPS INITIATION INITIATOR).
+
+INIT1-PROC1(F) =  (s::F FPS PROCESS PROC-EV) = ^
+	    (s::F FPS INITIATION INIT-EV) = ^
+	    (s::F FPS PROCESS UNDERGOER) =
+	    (s::F FPS INITIATION INITIATOR)
+	    (s::F FPS INITIATION CHECK LEX) = +.
+
+INIT1-PROC2(F) =  (s::F FPS PROCESS PROC-EV) = ^
+	    (s::F FPS INITIATION INIT-EV) = ^
+	    (s::F FPS PROCESS UNDERGOER) ~=
+	    (s::F FPS INITIATION INITIATOR)
+	    (s::F FPS INITIATION CHECK LEX) = +.
+
+
+PROC1-RES1(F) = (s::F FPS PROCESS UNDERGOER) =
+	      	(s::F FPS RESULT RESULTEE).
+
+INIT1-RES1(F) = (s::F FPS INITIATION INITIATOR) =
+	      	(s::F FPS RESULT RESULTEE).
+
+PROC1-RES2(F) = (s::F FPS PROCESS UNDERGOER) ~=
+	      	(s::F FPS RESULT RESULTEE).
+
+INIT1-RES2(F) = (s::F FPS INITIATION INITIATOR) ~=
+	      	(s::F FPS RESULT RESULTEE).
+
+
+"
+INIT1-PROC1(F) =  (s::F FPS PROCESS PROC-EV) = ^
+	    (s::F FPS INITIATION INIT-EV) = ^
+	    (s::F FPS V-TEMPLATE) = init1-proc1.
+
+INIT1-PROC2(F) =  (s::F FPS PROCESS PROC-EV) = ^
+	    (s::F FPS INITIATION INIT-EV) = ^
+	    (s::F FPS V-TEMPLATE) = init1-proc2.
+"
+
+
+INTRANS-PROC(P) = (^PRED) = 'P<(^SUBJ)>'
+		  @(PROC ^)
+		  {(s::^ FPS CHECK RES) =c +
+		  @(PROC1-RES1 ^) |
+		  [~ (s::^ FPS CHECK RES) ]}. 
+
+INTRANS-INIT1-PROC1(P) = (^PRED) = 'P<(^SUBJ)>'
+	   	         @(INIT1-PROC1 ^)
+			  @(PROC1-RES1 ^).
+
+INTRANS-INIT1-PROC2(P) = (^PRED) = 'P<(^SUBJ)>'
+	   	         @(INIT1-PROC2 ^)
+			  @(PROC1-RES1 ^).
+
+
+
+TRANS-INIT1-PROC1(P) = (^PRED) = 'P<(^SUBJ)(^OBJ)>'
+	   	         @(INIT1-PROC1 ^)
+			 {(s::^ FPS CHECK RES) =c +
+			 @(PROC1-RES1 ^)
+			 }
+			 [~ (^PASSIVE) = +]
+	       		 (^OBJ) = (s::^ FPS RHEME).
+
+TRANS-INIT1-PROC2(P) = (^PRED) = 'P<(^SUBJ)(^OBJ)>'
+	   	         @(INIT1-PROC2 ^)
+			 {(s::^ FPS CHECK RES) =c +
+			 @(PROC1-RES1 ^)
+			 }
+			 [~ (^PASSIVE) = +]
+	       		 (^OBJ) = (s::^ FPS PROCESS UNDERGOER).
+
+
   "Verbs"
 
 "states"
 
 VERB-INIT-RHEME(P) = (^ PRED) = 'P<(^ SUBJ)(^ OBJ)>'
-	 	   @(INITIATOR ^ ^ (^SUBJ))
+	 	   @(INITIATION ^ ^ (^SUBJ))
 		   @(RHEME ^ (^OBJ)).
 
 "pure undergoer"
    VERB-PROC(P) =
 	  (^ PRED) = 'P<(^ SUBJ)>'
-	 @(UNDERGOER ^ ^ (^SUBJ)).
+	 @(PROCESS ^ ^ (^SUBJ)).
 
 "separate initiator and undergoer"
    VERB-INIT1-PROC2(P) =
 	  @(PASS (^ PRED) = 'P<(^ SUBJ)(^ OBJ)>')
 	  { (^ PASSIVE) =c +
-	   " { @(INITIATOR ^ (^OBL-AG)) |
+	   " { @(INITIATION ^ (^OBL-AG)) |
 	     (%empty VAR) = unknown 
-	      @(INITIATOR ^ %empty)}"
-	    @(UNDERGOER ^ ^ (^SUBJ)) |
+	      @(INITIATION ^ %empty)}"
+	    @(PROCESS ^ ^ (^SUBJ)) |
 	    (^PASSIVE) =c -
-	    @(INITIATOR ^ ^ (^SUBJ))
-	    @(UNDERGOER ^ ^ (^OBJ)) 
+	    @(INITIATION ^ ^ (^SUBJ))
+	    @(PROCESS ^ ^ (^OBJ)) 
 	  }.
 
 "Initiator-undergoer" 
    VERB-INIT1-PROC1(P) =
 	  @(PASS (^ PRED) = 'P<(^ SUBJ)(^ OBJ)>')
 	  { (^ PASSIVE) =c +
-	      @(UNDERGOER ^ ^ (^OBL-AG))
+	      @(PROCESS ^ ^ (^OBL-AG))
 	      "|
-	    { @(INITIATOR ^ (^OBL-AG))
-	      @(UNDERGOER ^ (^OBL-AG)) |
+	    { @(INITIATION ^ (^OBL-AG))
+	      @(PROCESS ^ (^OBL-AG)) |
 	      (%empty VAR) = unknown
-	      @(INITIATOR ^ %empty)
-	      @(UNDERGOER ^ %empty)}
+	      @(INITIATION ^ %empty)
+	      @(PROCESS ^ %empty)}
 	    @(RHEME (^FPS) (^SUBJ))"
 	    |
 	    (^PASSIVE) =c -
-	    @(INITIATOR ^ ^ (^SUBJ))
-	    @(UNDERGOER ^ ^ (^SUBJ))
+	    @(INITIATION ^ ^ (^SUBJ))
+	    @(PROCESS ^ ^ (^SUBJ))
 	    @(RHEME ^ (^OBJ))
 	  }.
 
@@ -284,30 +378,31 @@ VERB-INIT-RHEME(P) = (^ PRED) = 'P<(^ SUBJ)(^ OBJ)>'
 
 VERB-INIT1-PROC2-RES(P) = @(PASS @(DAT-SHIFT (^ PRED) = 'P<(^ SUBJ)(^ OBJ) (^OBL-TO)>'))
 { @(RHEME ^ (^OBL-TO))
-  @(UNDERGOER ^ ^ (^OBJ))
-  @(INITIATOR ^ ^ (^SUBJ))
+  @(PROCESS ^ ^ (^OBJ))
+  @(INITIATION ^ ^ (^SUBJ))
 |
  @(RHEME ^ (^OBJ2))
  @(RESULT ^ have (^OBJ))
- @(UNDERGOER ^ ^ NULL)
- @(INITIATOR ^ ^ (^SUBJ)) 
+ @(PROCESS ^ ^ NULL)
+ @(INITIATION ^ ^ (^SUBJ)) 
 }.
 
 
    RESULT(F P SBJ) =
-	  (s::F FPS resP R-SUBJ) = s::SBJ
-	  (s::F FPS resP res) = s::P.
+	  (s::F FPS RESULT RESULTEE) = SBJ
+	  (s::F FPS RESULT RES-EV PRED) = P
+	  (s::^ FPS CHECK RES) = +.
 
-  UNDERGOER(F P SBJ) =
-  (s::F FPS procP P-SUBJ) = s::SBJ
-  (s::F FPS procP proc) = s::P.
+  PROCESS(F P SBJ) =
+  (s::F FPS PROCESS UNDERGOER) = SBJ
+  (s::F FPS PROCESS PROC-EV) = P.
 
-  INITIATOR(F P SBJ) =
-  (s::F FPS initP I-SUBJ) = s::SBJ
-  (s::F FPS initP init) = s::P.
+  INITIATION(F P SBJ) =
+  (s::F FPS INITIATION INITIATOR) = SBJ
+  (s::F FPS INITIATION INIT-EV) = P.
 
 RHEME(F ST) =
- (s::F FPS RHEME) = s::ST.
+ (s::F FPS RHEME) = ST.
 
 
 "TNS-ASP"
@@ -341,7 +436,8 @@ RHEME(F ST) =
 	  | (^VFORM) = inf}.
 
    S-AGR = (^ SUBJ PERS) = 3  "for verbs in -s"
-	   (^ SUBJ NUM) = sg. 
+	   (^ SUBJ NUM) = sg.
+	  
 
 
 "template for ntypes, called NPOS here because of clash with common templates"
@@ -387,33 +483,56 @@ try   V-S XLE (^PRED) = '%stem<(^SUBJ)(^XCOMP)>'
 
 hate	  V-S XLE @(TRANS %stem).  "using the morphological analyzer"
 
-eat       V-S XLE @(OPT-TRANS %stem). 
+"eat       V-S XLE @(OPT-TRANS %stem)."
 
+"  PROCESS(F P SBJ) =
+  (s::F FPS PROCESS UNDERGOER) = s::SBJ
+  (s::F FPS PROCESS PROC-EV) = s::P."
+
+"INTRANS-INIT1-PROC1(P)"
+
+eat V-S XLE  {@(INTRANS-INIT1-PROC1 %stem) |
+    	      @(TRANS-INIT1-PROC1 %stem)}.
+
+bake V-S XLE {{@(INTRANS-INIT1-PROC1 %stem) |
+    	      @(TRANS-INIT1-PROC1 %stem)} |
+	      {@(INTRANS-INIT1-PROC2 %stem) |
+    	      @(TRANS-INIT1-PROC2 %stem)} }.
+
+roll V-S XLE  { (^SUBJ PROTO-ROLE) =c patient
+     	      @(INTRANS-PROC %stem) |
+	      (^SUBJ PROTO-ROLE) =c agent
+    	      @(TRANS-INIT1-PROC2 %stem)}.
+
+push V-S XLE  {@(INTRANS-INIT1-PROC2 %stem) |
+    	      @(TRANS-INIT1-PROC2 %stem)}.
 
 
 "FPS Verbs"
 
 "verbs"
 
+"
 bake 	  V-S XLE { @(VERB-INIT1-PROC1 bake)
 	       |@(VERB-INIT1-PROC2 bake)}.
+"
 
 fear	 V-S XLE @(VERB-INIT-RHEME fear).
 
 kick 	 V-S XLE {@(VERB-INIT1-PROC2 kick) |
 	     @(VERB-INIT1-PROC2-RES kick) 
 	      }.
-
+"
 push 	  V-S XLE { ~[(^ PARTICIPLE)]
 		@(VERB-PROC push)
 		|
 		@(VERB-INIT1-PROC2 push)}.
-
-roll 	  V-S XLE { ~[(^ PARTICIPLE)]
+"
+"roll 	  V-S XLE { ~[(^ PARTICIPLE)]
 		@(VERB-PROC roll)
 		|
 		@(VERB-INIT1-PROC2 roll)}.
-
+"
 
 
 "Fullform verbs"
@@ -444,11 +563,13 @@ very   ADV * @(PRED very).
 "prepositions"
 
 off 	  PART * (^DIR) = +
-	      @(RESULT ^ off (^FPS procP P-SUBJ));
+	      "@(RESULT ^ (^PRED) %e)"
+	      @(RHEME ^ %r)
+	      (%r PRED) = 'off<(%r OBJ)>'
+	      (%r OBJ) = (s::^ FPS PROCESS UNDERGOER);
 	  P * (^ PRED) = 'off<(^ OBJ)>'  "rolled off the table"
 	      (^ DIR) = +
-	      (^ PTYPE) = sem
-	      @(RHEME (ADJUNCT ^) ^).
+	      (^ PTYPE) = sem.
 
 by 	  P * @(PREP by). 
 
@@ -464,13 +585,28 @@ in 	  P * @(PREP in).
 with 	  P * @(PREP with). 
 
 
+"nouns"
+
+girl      N * (^ PRED) = 'girl'
+	  @NSG
+	  (^ PROTO-ROLE) = agent.
+
+
+ball      N * (^ PRED) = 'ball'
+	  @NSG
+	  (^ PROTO-ROLE) = patient.
+
 "auxiliaries"
 
 was 	  AUX * @(TENSE past)
 		{ (^ SUBJ PERS) = 1
                 | (^ SUBJ PERS) = 3
                 }
-                (^ SUBJ NUM) = sg. 
+                (^ SUBJ NUM) = sg.
+
+has 	  AUX * @(TENSE pres)
+		(^ SUBJ PERS) = 3
+                (^ SUBJ NUM) = sg.
 
 "pronouns (not complete)"
 
@@ -598,9 +734,13 @@ MORPH   ENGLISH   LEXICON (1.0)
 
 +3sg	PERS XLE @S-AGR.
 
++PastPerf TNS XLE @PASTP
+	      	  @(RESULT ^ (^PRED) %e). 
+
 +PastBoth TNS XLE "past tense or past particle"
 		  { @VPAST
-		  | @PASTP }. 
+		  | @PASTP
+		    @(RESULT ^ (^PRED) %e) }. 
 
 
 "+PastBoth TNS XLE past tense or past particle
@@ -617,7 +757,6 @@ MORPH   ENGLISH   LEXICON (1.0)
 +123SP	PERS XLE .
 
 +Non3sg PERS XLE @BARE-AGR.
-
 
 +Prog	ASP XLE @VPROG.  
 
