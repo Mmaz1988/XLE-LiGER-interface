@@ -1,0 +1,163 @@
+10 : ∃r[before(r,now) ∧ ∃z[bounded(z,r) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]]
+
+Proof:
+Sequent:
+((5 ⊸ (1 ⊸ (0 ⊸ 12))) ⊸ (20 ⊸ (21 ⊸ (17 ⊸ (12 ⊸ 11))))) : [λR_<e,<e,<v,t>>>.[λx_e.[λy_e.[λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ R(x)(y)(e) ∧ ag(e,x) ∧ pt(e,y)]]]]]
+((0 ⊸ 14) ⊸ (5 ⊸ (0 ⊸ 12))) : [λP_<v,t>.[λx_e.[λe_v.∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ P(e2)]]]]]
+(1 ⊸ (0 ⊸ 14)) : [λx_e.[λe_v.proc(e,x,y)]]
+((16 ⊸ (18 ⊸ 16)) ⊸ ((16 ⊸ 10) ⊸ (18 ⊸ 10))) : [λT_<s,<s,t>>.[λP_<s,t>.[λs_s.∃r[T(r)(s) ∧ P(r)]]]]
+18 : now
+((29 ⊸ (30 ⊸ 19)) ⊸ ((17 ⊸ 10) ⊸ (16 ⊸ 10))) : [λM_<s,<s,t>>.[λP_<s,t>.[λs_s.∃z[M(s)(z) ∧ P(z)]]]]
+((23 ⊸ (27 ⊸ 25)) ⊸ ((20 ⊸ (17 ⊸ 10)) ⊸ (17 ⊸ 10))) : [λP_<e,<s,t>>.[λQ_<e,<s,t>>.[λs_s.∃x[P(x)(s) ∧ Q(x)(s)]]]]
+((22 ⊸ (26 ⊸ 24)) ⊸ 21) : [λP_<e,<s,t>>.ιx[P(x)]]
+(22 ⊸ (26 ⊸ 24)) : [λx_e.[λs_s.ball(x,s)]]
+(23 ⊸ (27 ⊸ 25)) : [λx_e.[λs_s.girl(x,s)]]
+((17 ⊸ (12 ⊸ 11)) ⊸ (17 ⊸ 10)) : [λP_<s,<v,t>>.[λs_s.∃e[P(s)(e)]]]
+(29 ⊸ (30 ⊸ 19)) : [λs_s.[λt_s.bounded(t,s)]]
+(16 ⊸ (18 ⊸ 16)) : [λt_s.[λt2_s.before(t,t2)]]
+
+
+Agenda:
+(12 ⊸ (20 ⊸ (21 ⊸ (17 ⊸ (12 ⊸ 11))))) : [λR_<e,<e,<v,t>>>.[λx_e.[λy_e.[λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ R(x)(y)(e) ∧ ag(e,x) ∧ pt(e,y)]]]]]
+0 : y1
+1 : x1
+5 : z
+(14 ⊸ (5 ⊸ (0 ⊸ 12))) : [λP_<v,t>.[λx_e.[λe_v.∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ P(e2)]]]]]
+0 : z1
+(1 ⊸ (0 ⊸ 14)) : [λx_e.[λe_v.proc(e,x,y)]]
+(16 ⊸ (10 ⊸ (18 ⊸ 10))) : [λT_<s,<s,t>>.[λP_<s,t>.[λs_s.∃r[T(r)(s) ∧ P(r)]]]]
+16 : z2
+18 : y2
+16 : x2
+18 : now
+(19 ⊸ (10 ⊸ (16 ⊸ 10))) : [λM_<s,<s,t>>.[λP_<s,t>.[λs_s.∃z[M(s)(z) ∧ P(z)]]]]
+17 : z3
+30 : y3
+29 : x3
+(25 ⊸ (10 ⊸ (17 ⊸ 10))) : [λP_<e,<s,t>>.[λQ_<e,<s,t>>.[λs_s.∃x[P(x)(s) ∧ Q(x)(s)]]]]
+17 : x5
+20 : z4
+27 : y4
+23 : x4
+(24 ⊸ 21) : [λP_<e,<s,t>>.ιx[P(x)]]
+26 : z5
+22 : y5
+(22 ⊸ (26 ⊸ 24)) : [λx_e.[λs_s.ball(x,s)]]
+(23 ⊸ (27 ⊸ 25)) : [λx_e.[λs_s.girl(x,s)]]
+(11 ⊸ (17 ⊸ 10)) : [λP_<s,<v,t>>.[λs_s.∃e[P(s)(e)]]]
+12 : y6
+17 : x6
+(29 ⊸ (30 ⊸ 19)) : [λs_s.[λt_s.bounded(t,s)]]
+(16 ⊸ (18 ⊸ 16)) : [λt_s.[λt2_s.before(t,t2)]]
+
+
+Combining (1 ⊸ (0 ⊸ 14)) : [λx_e.[λe_v.proc(e,x,y)]] and 1 : x1
+to: (0 ⊸ 14) : [λe_v.proc(e,x1,y)]
+Combining (22 ⊸ (26 ⊸ 24)) : [λx_e.[λs_s.ball(x,s)]] and 22 : y5
+to: (26 ⊸ 24) : [λs_s.ball(y5,s)]
+Combining (23 ⊸ (27 ⊸ 25)) : [λx_e.[λs_s.girl(x,s)]] and 23 : x4
+to: (27 ⊸ 25) : [λs_s.girl(x4,s)]
+Combining (29 ⊸ (30 ⊸ 19)) : [λs_s.[λt_s.bounded(t,s)]] and 29 : x3
+to: (30 ⊸ 19) : [λt_s.bounded(t,x3)]
+Combining (16 ⊸ (18 ⊸ 16)) : [λt_s.[λt2_s.before(t,t2)]] and 16 : z2
+to: (18 ⊸ 16) : [λt2_s.before(z2,t2)]
+Combining (16 ⊸ (18 ⊸ 16)) : [λt_s.[λt2_s.before(t,t2)]] and 16 : x2
+to: (18 ⊸ 16) : [λt2_s.before(x2,t2)]
+Combining (0 ⊸ 14) : [λe_v.proc(e,x1,y)] and 0 : y1
+to: 14 : proc(y1,x1,y)
+Combining (0 ⊸ 14) : [λe_v.proc(e,x1,y)] and 0 : z1
+to: 14 : proc(z1,x1,y)
+Combining (26 ⊸ 24) : [λs_s.ball(y5,s)] and 26 : z5
+to: 24 : ball(y5,z5)
+Combining (27 ⊸ 25) : [λs_s.girl(x4,s)] and 27 : y4
+to: 25 : girl(x4,y4)
+Combining (30 ⊸ 19) : [λt_s.bounded(t,x3)] and 30 : y3
+to: 19 : bounded(y3,x3)
+Combining (18 ⊸ 16) : [λt2_s.before(z2,t2)] and 18 : y2
+to: 16 : before(z2,y2)
+Combining (18 ⊸ 16) : [λt2_s.before(z2,t2)] and 18 : now
+to: 16 : before(z2,now)
+Combining (18 ⊸ 16) : [λt2_s.before(x2,t2)] and 18 : y2
+to: 16 : before(x2,y2)
+Combining (18 ⊸ 16) : [λt2_s.before(x2,t2)] and 18 : now
+to: 16 : before(x2,now)
+Combining (14 ⊸ (5 ⊸ (0 ⊸ 12))) : [λP_<v,t>.[λx_e.[λe_v.∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ P(e2)]]]]] and 14 : proc(z1,x1,y)
+to: (5 ⊸ (0 ⊸ 12)) : [λx_e.[λe_v.∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,x1,y)]]]]
+Combining (24 ⊸ 21) : [λP_<e,<s,t>>.ιx[P(x)]] and 24 : ball(y5,z5)
+to: 21 : ιx[[λz5_s.ball(x,z5)]]
+Combining (25 ⊸ (10 ⊸ (17 ⊸ 10))) : [λP_<e,<s,t>>.[λQ_<e,<s,t>>.[λs_s.∃x[P(x)(s) ∧ Q(x)(s)]]]] and 25 : girl(x4,y4)
+to: (10 ⊸ (17 ⊸ 10)) : [λQ_<e,<s,t>>.[λs_s.∃x[girl(x,s) ∧ Q(x)(s)]]]
+Combining (19 ⊸ (10 ⊸ (16 ⊸ 10))) : [λM_<s,<s,t>>.[λP_<s,t>.[λs_s.∃z[M(s)(z) ∧ P(z)]]]] and 19 : bounded(y3,x3)
+to: (10 ⊸ (16 ⊸ 10)) : [λP_<s,t>.[λs_s.∃z[bounded(z,s) ∧ P(z)]]]
+Combining (16 ⊸ (10 ⊸ (18 ⊸ 10))) : [λT_<s,<s,t>>.[λP_<s,t>.[λs_s.∃r[T(r)(s) ∧ P(r)]]]] and 16 : before(x2,y2)
+to: (10 ⊸ (18 ⊸ 10)) : [λP_<s,t>.[λs_s.∃r[before(r,s) ∧ P(r)]]]
+Combining (5 ⊸ (0 ⊸ 12)) : [λx_e.[λe_v.∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,x1,y)]]]] and 5 : z
+to: (0 ⊸ 12) : [λe_v.∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z) ∧ proc(e2,x1,y)]]]
+Combining (0 ⊸ 12) : [λe_v.∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z) ∧ proc(e2,x1,y)]]] and 0 : y1
+to: 12 : ∃e1[∃e2[equals(y1,to(e1,e2)) ∧ init(e1,z) ∧ proc(e2,x1,y)]]
+Combining (12 ⊸ (20 ⊸ (21 ⊸ (17 ⊸ (12 ⊸ 11))))) : [λR_<e,<e,<v,t>>>.[λx_e.[λy_e.[λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ R(x)(y)(e) ∧ ag(e,x) ∧ pt(e,y)]]]]] and 12 : ∃e1[∃e2[equals(y1,to(e1,e2)) ∧ init(e1,z) ∧ proc(e2,x1,y)]]
+to: (20 ⊸ (21 ⊸ (17 ⊸ (12 ⊸ 11)))) : [λx_e.[λy_e.[λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,y,y)]] ∧ ag(e,x) ∧ pt(e,y)]]]]
+Combining (20 ⊸ (21 ⊸ (17 ⊸ (12 ⊸ 11)))) : [λx_e.[λy_e.[λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,y,y)]] ∧ ag(e,x) ∧ pt(e,y)]]]] and 20 : z4
+to: (21 ⊸ (17 ⊸ (12 ⊸ 11))) : [λy_e.[λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,y,y)]] ∧ ag(e,z4) ∧ pt(e,y)]]]
+Combining (21 ⊸ (17 ⊸ (12 ⊸ 11))) : [λy_e.[λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,y,y)]] ∧ ag(e,z4) ∧ pt(e,y)]]] and 21 : ιx[[λz5_s.ball(x,z5)]]
+to: (17 ⊸ (12 ⊸ 11)) : [λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]]
+Combining (17 ⊸ (12 ⊸ 11)) : [λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]] and 17 : z3
+to: (12 ⊸ 11) : [λe_v.partOf(e,z3) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]
+Combining (17 ⊸ (12 ⊸ 11)) : [λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]] and 17 : x5
+to: (12 ⊸ 11) : [λe_v.partOf(e,x5) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]
+Combining (17 ⊸ (12 ⊸ 11)) : [λs_s.[λe_v.partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]] and 17 : x6
+to: (12 ⊸ 11) : [λe_v.partOf(e,x6) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]
+Combining (12 ⊸ 11) : [λe_v.partOf(e,z3) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])] and 12 : y6
+to: 11 : partOf(y6,z3) ∧ roll(y6) ∧ ∃e1[∃e2[equals(y6,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(y6,z4) ∧ pt(y6,ιx[[λz5_s.ball(x,z5)]])
+Combining (12 ⊸ 11) : [λe_v.partOf(e,x5) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])] and 12 : y6
+to: 11 : partOf(y6,x5) ∧ roll(y6) ∧ ∃e1[∃e2[equals(y6,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(y6,z4) ∧ pt(y6,ιx[[λz5_s.ball(x,z5)]])
+Combining (12 ⊸ 11) : [λe_v.partOf(e,x6) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])] and 12 : y6
+to: 11 : partOf(y6,x6) ∧ roll(y6) ∧ ∃e1[∃e2[equals(y6,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(y6,z4) ∧ pt(y6,ιx[[λz5_s.ball(x,z5)]])
+Combining (11 ⊸ (17 ⊸ 10)) : [λP_<s,<v,t>>.[λs_s.∃e[P(s)(e)]]] and 11 : partOf(y6,x6) ∧ roll(y6) ∧ ∃e1[∃e2[equals(y6,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(y6,z4) ∧ pt(y6,ιx[[λz5_s.ball(x,z5)]])
+to: (17 ⊸ 10) : [λs_s.∃e[partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]]
+Combining (17 ⊸ 10) : [λs_s.∃e[partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]] and 17 : z3
+to: 10 : ∃e[partOf(e,z3) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]
+Combining (17 ⊸ 10) : [λs_s.∃e[partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]] and 17 : x5
+to: 10 : ∃e[partOf(e,x5) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]
+Combining (10 ⊸ (16 ⊸ 10)) : [λP_<s,t>.[λs_s.∃z[bounded(z,s) ∧ P(z)]]] and 10 : ∃e[partOf(e,z3) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]
+to: (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιx[[λz5_s.ball(x,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιx[[λz5_s.ball(x,z5)]])]]]
+Combining (10 ⊸ (17 ⊸ 10)) : [λQ_<e,<s,t>>.[λs_s.∃x[girl(x,s) ∧ Q(x)(s)]]] and 10 : ∃e[partOf(e,x5) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]
+to: (17 ⊸ 10) : [λs_s.∃x[girl(x,s) ∧ ∃e[partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]] and 16 : z2
+to: 10 : ∃z[bounded(z,z2) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]] and 16 : x2
+to: 10 : ∃z[bounded(z,x2) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]] and 16 : before(z2,y2)
+to: 10 : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]](before(z2,y2))
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]] and 16 : before(z2,now)
+to: 10 : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]](before(z2,now))
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]] and 16 : before(x2,y2)
+to: 10 : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]](before(x2,y2))
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]] and 16 : before(x2,now)
+to: 10 : [λs_s.∃z[bounded(z,s) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]](before(x2,now))
+Combining (17 ⊸ 10) : [λs_s.∃x[girl(x,s) ∧ ∃e[partOf(e,s) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]] and 17 : z3
+to: 10 : ∃x[girl(x,z3) ∧ ∃e[partOf(e,z3) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]
+Combining (10 ⊸ (18 ⊸ 10)) : [λP_<s,t>.[λs_s.∃r[before(r,s) ∧ P(r)]]] and 10 : ∃z[bounded(z,z2) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]
+to: (18 ⊸ 10) : [λs_s.∃r[before(r,s) ∧ ∃z[bounded(z,r) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]]
+Combining (10 ⊸ (16 ⊸ 10)) : [λP_<s,t>.[λs_s.∃z[bounded(z,s) ∧ P(z)]]] and 10 : ∃x[girl(x,z3) ∧ ∃e[partOf(e,z3) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]
+to: (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]]
+Combining (18 ⊸ 10) : [λs_s.∃r[before(r,s) ∧ ∃z[bounded(z,r) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]] and 18 : now
+to: 10 : ∃r[before(r,now) ∧ ∃z[bounded(z,r) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,z4) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,z4) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]] and 16 : z2
+to: 10 : ∃z[bounded(z,z2) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]] and 16 : x2
+to: 10 : ∃z[bounded(z,x2) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]] and 16 : before(z2,y2)
+to: 10 : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]](before(z2,y2))
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]] and 16 : before(z2,now)
+to: 10 : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]](before(z2,now))
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]] and 16 : before(x2,y2)
+to: 10 : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]](before(x2,y2))
+Combining (16 ⊸ 10) : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]] and 16 : before(x2,now)
+to: 10 : [λs_s.∃z[bounded(z,s) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]](before(x2,now))
+Combining (10 ⊸ (18 ⊸ 10)) : [λP_<s,t>.[λs_s.∃r[before(r,s) ∧ P(r)]]] and 10 : ∃z[bounded(z,z2) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]
+to: (18 ⊸ 10) : [λs_s.∃r[before(r,s) ∧ ∃z[bounded(z,r) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]]]
+Combining (18 ⊸ 10) : [λs_s.∃r[before(r,s) ∧ ∃z[bounded(z,r) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]]] and 18 : now
+to: 10 : ∃r[before(r,now) ∧ ∃z[bounded(z,r) ∧ ∃x[girl(x,z) ∧ ∃e[partOf(e,z) ∧ roll(e) ∧ ∃e1[∃e2[equals(e,to(e1,e2)) ∧ init(e1,x) ∧ proc(e2,ιz6[[λz5_s.ball(z6,z5)]],y)]] ∧ ag(e,x) ∧ pt(e,ιz6[[λz5_s.ball(z6,z5)]])]]]]
+
+
